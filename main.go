@@ -54,6 +54,7 @@ func main() {
 	file, err := os.Create(path)
 	checkError(err)
 	writer := csv.NewWriter(file)
+	writer.Write([]string{"", "title", "link", "type"})
 
 	for _, site := range sites {
 		url := fmt.Sprintf("%s/%s", website, site)
